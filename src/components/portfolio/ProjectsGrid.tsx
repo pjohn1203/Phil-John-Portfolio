@@ -3,72 +3,32 @@ import ProjectCard from "./ProjectCard";
 
 interface ProjectsGridProps {
   projects?: Array<{
-    title: string;
+    name: string;
     description: string;
-    imageUrl: string;
+    imageUrl?: string;
     technologies: string[];
-    liveUrl: string;
-    githubUrl: string;
-    detailedDescription: string;
-    features: string[];
+    url?: string;
   }>;
 }
 
 const ProjectsGrid = ({
   projects = [
     {
-      title: "E-Commerce Platform",
+      name: "ClothesFinder",
       description:
-        "A modern e-commerce platform with real-time inventory management and secure payment processing.",
+        "Developed a mobile application that enables users to find clothing styles for sale by simply snapping a photo of an article of clothing. Designed an intuitive and accessible UI using UIKit to facilitate image upload and provide users with shopping results from Google Shopping, based on tags returned by a CoreML Model. Integrated CoreML for seamless image processing and SerpAPI for Google Shopping integration to deliver relevant product information in real-time.",
       imageUrl:
-        "https://dummyimage.com/600x400/4a9eff/ffffff&text=E-Commerce+Platform",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-      detailedDescription:
-        "A full-featured e-commerce solution with advanced inventory management, secure payment processing, and real-time order tracking.",
-      features: [
-        "Real-time inventory tracking",
-        "Secure payment processing",
-        "User authentication",
-        "Order management system",
-      ],
+        "https://dummyimage.com/600x400/4a9eff/ffffff&text=ClothesFinder",
+      technologies: ["UIKit", "Swift", "Firebase", "SerpAPI", "CoreML"],
+      url: "#",
     },
     {
-      title: "Social Media Dashboard",
+      name: "Krak",
       description:
-        "Analytics dashboard for social media management with real-time data visualization.",
-      imageUrl:
-        "https://dummyimage.com/600x400/9d4edd/ffffff&text=Social+Dashboard",
-      technologies: ["Vue.js", "D3.js", "Firebase", "TailwindCSS"],
-      liveUrl: "#",
-      githubUrl: "#",
-      detailedDescription:
-        "A comprehensive social media analytics dashboard providing real-time insights and data visualization for multiple platforms.",
-      features: [
-        "Real-time analytics",
-        "Custom data visualization",
-        "Multi-platform integration",
-        "Automated reporting",
-      ],
-    },
-    {
-      title: "Task Management App",
-      description:
-        "Collaborative task management application with real-time updates and team features.",
-      imageUrl:
-        "https://dummyimage.com/600x400/4a9eff/ffffff&text=Task+Management",
-      technologies: ["React", "TypeScript", "GraphQL", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
-      detailedDescription:
-        "A collaborative task management solution featuring real-time updates, team collaboration tools, and advanced project tracking capabilities.",
-      features: [
-        "Real-time collaboration",
-        "Team management",
-        "Project analytics",
-        "Resource allocation",
-      ],
+        "Developed an iOS app for delivering short-form podcast content using audio RSS feeds, providing personalized user experiences through Firebase for secure session management and data storage. Designed in Figma and built with UIKit for a responsive and smooth user interface across devices. Handled RSS/XML parsing and used URLSession for network calls, ensuring asynchronous data retrieval and offline caching. Integrated AVFoundation for seamless audio playback, including background audio and media controls. Implemented CI/CD pipelines and testing via TestFlight for efficient app deployment.",
+      imageUrl: "https://dummyimage.com/600x400/9d4edd/ffffff&text=Krak",
+      technologies: ["UIKit", "Firebase Firestore", "Python"],
+      url: "https://trykrak.framer.ai",
     },
   ],
 }: ProjectsGridProps) => {
@@ -86,13 +46,20 @@ const ProjectsGrid = ({
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
               className="transform hover:scale-105 transition-all duration-300"
             >
-              <ProjectCard {...project} />
+              <ProjectCard
+                title={project.name}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                technologies={project.technologies}
+                liveUrl={project.url || "#"}
+                githubUrl="#"
+              />
             </div>
           ))}
         </div>

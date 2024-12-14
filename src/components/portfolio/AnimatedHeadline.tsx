@@ -12,9 +12,9 @@ interface AnimatedHeadlineProps {
 const AnimatedHeadline = ({
   text = [
     "Full Stack Developer",
-    "UI/UX Enthusiast",
-    "Problem Solver",
-    "Tech Innovator",
+    "AI Enthusiast",
+    "Arduino Hobbyist",
+    "Mobile Developer",
   ],
   typingSpeed = 100,
   deleteSpeed = 50,

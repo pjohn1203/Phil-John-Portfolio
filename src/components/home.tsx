@@ -49,9 +49,9 @@ const Home = () => {
       <main className="relative">
         <div id="about" className="min-h-screen">
           <HeroSection
-            name="John Doe"
-            title="Full Stack Developer"
-            subtitle="Building elegant solutions to complex problems"
+            name="Phil John"
+            title="Software Developer & Engineer"
+            subtitle="Pursuing my curiosity with technology"
             onExploreClick={() => handleSectionClick("experience")}
           />
         </div>
@@ -70,11 +70,10 @@ const Home = () => {
 
         <div id="contact" className="pt-16">
           <ContactSection
-            email="john.doe@example.com"
+            email="pkjohn1203@gmail.com"
             socialLinks={{
-              github: "https://github.com/johndoe",
-              linkedin: "https://linkedin.com/in/johndoe",
-              twitter: "https://twitter.com/johndoe",
+              github: "https://github.com/pjohn1203",
+              linkedin: "https://www.linkedin.com/in/philjohn1203/",
             }}
           />
         </div>

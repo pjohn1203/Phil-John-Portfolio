@@ -15,7 +15,7 @@ interface ContactSectionProps {
 }
 
 const ContactSection = ({
-  email = "contact@example.com",
+  email = "pkjohn1203@gmail.com",
   socialLinks = {
     github: "https://github.com",
     linkedin: "https://linkedin.com",

@@ -1,46 +1,39 @@
 import React from "react";
 import { Code, Database, Globe, Layout, Server } from "lucide-react";
+import TechBadge from "./TechBadge";
 
 interface TechStackProps {
-  technologies?: Array<{
+  skills?: Array<{
     name: string;
     icon: React.ReactNode;
-    level: number;
+    keywords: string[];
     description: string;
   }>;
 }
 
 const TechStack = ({
-  technologies = [
+  skills = [
     {
-      name: "Frontend Development",
-      icon: <Layout className="h-5 w-5" />,
-      level: 90,
-      description: "Expert in modern frontend frameworks and responsive design",
-    },
-    {
-      name: "Backend Development",
-      icon: <Server className="h-5 w-5" />,
-      level: 85,
-      description: "Proficient in building scalable server-side applications",
-    },
-    {
-      name: "Database Management",
-      icon: <Database className="h-5 w-5" />,
-      level: 80,
-      description: "Experienced with SQL and NoSQL databases",
-    },
-    {
-      name: "Web Technologies",
-      icon: <Globe className="h-5 w-5" />,
-      level: 95,
-      description: "Deep understanding of web protocols and standards",
-    },
-    {
-      name: "Programming Languages",
+      name: "Languages",
       icon: <Code className="h-5 w-5" />,
-      level: 88,
-      description: "Proficient in multiple programming languages and paradigms",
+      keywords: ["Java", "Swift", "Oracle SQL", "TypeScript", "Python"],
+      description: "Programming languages I specialize in",
+    },
+    {
+      name: "Technologies",
+      icon: <Server className="h-5 w-5" />,
+      keywords: [
+        "UIKit",
+        "SwiftUI",
+        "SpringBoot",
+        "Spring Batch",
+        "IBM DataStage",
+        "Oracle",
+        "Firebase",
+        "OCF/PCF",
+        "Azure",
+      ],
+      description: "Frameworks and platforms I work with",
     },
   ],
 }: TechStackProps) => {
@@ -56,21 +49,38 @@ const TechStack = ({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {technologies.map((tech, index) => (
-            <div
-              key={index}
-              className="flex items-center space-x-3 p-4 rounded-lg border border-border bg-background"
-            >
-              <div className="text-purple-600">{tech.icon}</div>
-              <div>
-                <h3 className="font-medium">{tech.name}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {tech.description}
-                </p>
+        <div className="space-y-12">
+          {skills.map((category, index) => (
+            <div key={index} className="space-y-6">
+              {/* Category Header */}
+              <div className="flex items-center space-x-3">
+                <div className="text-purple-600">{category.icon}</div>
+                <h3 className="text-xl font-semibold">{category.name}</h3>
+              </div>
+
+              {/* Skills Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {category.keywords.map((skill, skillIndex) => (
+                  <TechBadge
+                    key={skillIndex}
+                    name={skill}
+                    level={85}
+                    description={`Experienced with ${skill}`}
+                    className="w-full"
+                  />
+                ))}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-12 p-6 rounded-lg border border-border bg-accent/5">
+          <h4 className="text-lg font-semibold mb-2">Continuous Learning</h4>
+          <p className="text-foreground/80">
+            I'm constantly expanding my skill set and staying up-to-date with
+            the latest technologies and best practices in software development.
+          </p>
         </div>
       </div>
     </section>

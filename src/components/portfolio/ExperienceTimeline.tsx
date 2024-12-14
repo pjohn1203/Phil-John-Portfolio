@@ -6,52 +6,64 @@ interface ExperienceTimelineProps {
     title: string;
     company: string;
     date: string;
+    location: string;
     description: string;
     responsibilities: string[];
-    technologies: string[];
+    technologies?: string[];
   }>;
 }
 
 const ExperienceTimeline = ({
   experiences = [
     {
-      title: "Senior Software Engineer",
-      company: "Tech Innovations Inc.",
-      date: "2022 - Present",
+      title: "Software Engineer",
+      company: "General Motors",
+      location: "Austin, TX",
+      date: "March 2021 - Present",
       description:
-        "Leading development of cloud-native applications and mentoring junior developers.",
+        "Full-stack software engineer focused on developing scalable enterprise applications using modern technologies and best practices.",
       responsibilities: [
-        "Architected and implemented scalable microservices",
-        "Led team of 5 developers in agile environment",
-        "Reduced system latency by 40%",
+        "Developed dynamic front-end interfaces leveraging KendoUI and Angular TypeScript, delivering responsive and intuitive user experiences for complex business workflows",
+        "Built scalable backend services using Spring Boot, Spring Batch, and RabbitMQ, ensuring efficient data processing, scheduling, and message-driven communication",
+        "Optimized and designed complex Oracle database queries, including stored procedures, performance tuning, and schema design to enhance application efficiency and scalability.",
+        "Managed ETL pipelines and data integrations using IBM DataStage, enabling seamless data transformation and loading across enterprise systems.",
+        "Spearheaded full-stack projects, implementing responsive UI designs and scalable backend systems hosted on PCF/OCF/Azure that supported seamless user experiences and improved operational efficiency.",
+        "Collaborated with cross-functional teams to identify and implement solutions that met both technical and business requirements.",
+        "Conducted rigorous testing and debugging for front-end and back-end components using JUnit, ensuring high-quality software standards and robust application performance.",
+        "Documented technical workflows and system architectures to support ongoing maintenance and onboarding of new team members.",
       ],
-      technologies: ["React", "Node.js", "AWS", "Docker"],
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "Spring Boot",
+        "Oracle",
+        "RabbitMQ",
+        "Azure",
+        "KendoUI",
+        "JUnit",
+      ],
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd",
-      date: "2020 - 2022",
+      title: "Software Developer (Quality Engineering)",
+      company: "Tata Consultancy Services",
+      location: "San Jose, CA",
+      date: "September 2019 - March 2021",
       description:
-        "Developed and maintained full-stack web applications for enterprise clients.",
+        "Quality Engineering focused on API testing, performance analysis, and load testing for a major consumer electronics company.",
       responsibilities: [
-        "Built responsive web applications",
-        "Implemented RESTful APIs",
-        "Optimized database performance",
+        "Developed and executed TestNG-based automation scripts for API testing, ensuring seamless integration and functionality across services.",
+        "Analyzed service VMs and database metrics to design and implement testing solutions for load testing, service performance, and database performance analysis.",
+        "Utilized Locust Framework with Python to simulate high-load scenarios, assess system reliability, and identify performance bottlenecks.",
+        "Was contracted to a Big Tech consumer electronics company in Cupertino",
       ],
-      technologies: ["React", "TypeScript", "Python", "PostgreSQL"],
-    },
-    {
-      title: "Frontend Developer",
-      company: "Creative Web Agency",
-      date: "2018 - 2020",
-      description:
-        "Created engaging user interfaces and interactive web experiences.",
-      responsibilities: [
-        "Developed responsive layouts",
-        "Implemented UI/UX designs",
-        "Optimized frontend performance",
+      technologies: [
+        "Python",
+        "TestNG",
+        "Locust",
+        "API Testing",
+        "Performance Testing",
+        "Load Testing",
       ],
-      technologies: ["JavaScript", "HTML", "CSS", "Vue.js"],
     },
   ],
 }: ExperienceTimelineProps) => {
