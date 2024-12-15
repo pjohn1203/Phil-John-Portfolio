@@ -1,21 +1,20 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import profileImage from "@/assets/profile-image.png";
 
 interface HeroSectionProps {
   name?: string;
   title?: string;
   subtitle?: string;
   onExploreClick?: () => void;
-  imageUrl?: string;
 }
 
 const HeroSection = ({
-  name = "John Doe",
+  name = "Phil John",
   title = "Software Engineer",
-  subtitle = "Crafting digital experiences with code",
+  subtitle = "Pursuing my curiosity with technology",
   onExploreClick = () => {},
-  imageUrl = "https://dummyimage.com/300/4a9eff/ffffff&text=JD",
 }: HeroSectionProps) => {
   return (
     <section className="min-h-screen w-full bg-[#0f172a] flex items-center justify-center">
@@ -23,7 +22,7 @@ const HeroSection = ({
         <div className="mb-8">
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-purple-600 shadow-lg shadow-purple-600/20">
             <img
-              src={imageUrl}
+              src={profileImage}
               alt={name}
               className="w-full h-full object-cover"
             />
