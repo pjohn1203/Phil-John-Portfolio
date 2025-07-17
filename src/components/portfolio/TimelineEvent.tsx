@@ -84,7 +84,7 @@ const TimelineEvent = ({
 
       {/* Detailed Dialog */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto pb-6">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
             <DialogDescription>
@@ -101,7 +101,7 @@ const TimelineEvent = ({
             </DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-6 mt-4">
+          <div className="space-y-6 mt-4 overflow-y-auto pr-1">
             {/* Full Description */}
             <p className="text-foreground/80">{description}</p>
 
@@ -137,15 +137,9 @@ const TimelineEvent = ({
               <Button
                 variant="outline"
                 onClick={() => setIsOpen(false)}
-                className="hover:bg-accent"
+                className="hover:bg-accent hover:bg-purple-700 text-white bg-purple-600"
               >
                 Close
-              </Button>
-              <Button
-                onClick={() => window.open("#", "_blank")}
-                className="bg-purple-600 hover:bg-purple-700 text-white"
-              >
-                View Project <ExternalLinkIcon className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>

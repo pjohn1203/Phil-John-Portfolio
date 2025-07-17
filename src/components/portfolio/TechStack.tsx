@@ -78,8 +78,7 @@ const TechStack = ({
         <div className="mt-12 p-6 rounded-lg border border-border bg-accent/5">
           <h4 className="text-lg font-semibold mb-2">Continuous Learning</h4>
           <p className="text-foreground/80">
-            I'm constantly expanding my skill set and staying up-to-date with
-            the latest technologies and best practices in software development.
+          I’m currently deepening my knowledge in the medical device space, driven by a strong interest in using code to make a real impact on people’s health. I’m actively building projects to apply my experience with data engineering and iOS development, especially focusing on how data can be explored and leveraged to support better health outcomes. I’m also learning more about ISO/IEC standards to better understand how to build safe, reliable, and compliant software for healthcare environments.
           </p>
         </div>
       </div>

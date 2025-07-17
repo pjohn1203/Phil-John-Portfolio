@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 
 interface ProjectCardProps {
   title?: string;
@@ -20,19 +20,45 @@ const ProjectCard = ({
   technologies = ["React", "TypeScript", "Tailwind CSS"],
   liveUrl = "#",
 }: ProjectCardProps) => {
+  const [expanded, setExpanded] = useState(false);
   return (
     <Card className="h-full overflow-hidden bg-background">
-      <div className="aspect-video">
+      <div className="aspect-video bg-accent/10 flex items-center justify-center overflow-hidden rounded-t-lg">
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain object-center p-2 rounded-lg"
         />
       </div>
 
       <div className="p-6 space-y-4">
         <h3 className="text-xl font-semibold text-foreground">{title}</h3>
-        <p className="text-muted-foreground line-clamp-4">{description}</p>
+        <div className="relative">
+          <p 
+            className={`text-sm text-muted-foreground ${expanded ? '' : 'line-clamp-3'} min-h-[4rem] cursor-pointer`}
+            onClick={() => setExpanded(!expanded)}
+          >
+            {description}
+          </p>
+          {description.length > 150 && (
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="mt-1 p-0 h-auto text-xs text-purple-600 hover:text-purple-700 hover:bg-transparent"
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? (
+                <>
+                  Show less <ChevronUp className="ml-1 h-3 w-3" />
+                </>
+              ) : (
+                <>
+                  Read more <ChevronDown className="ml-1 h-3 w-3" />
+                </>
+              )}
+            </Button>
+          )}
+        </div>
 
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (

@@ -1,5 +1,8 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import krakImage from "../../assets/krak.png";
+import clothesFinderImage from "../../assets/Clothesfinder.png";
+import nutrAiImage from "../../assets/NutrAI.png";
 
 interface ProjectsGridProps {
   projects?: Array<{
@@ -16,20 +19,26 @@ const ProjectsGrid = ({
     {
       name: "ClothesFinder",
       description:
-        "Developed a mobile application that enables users to find clothing styles for sale by simply snapping a photo of an article of clothing. Designed an intuitive and accessible UI using UIKit to facilitate image upload and provide users with shopping results from Google Shopping, based on tags returned by a CoreML Model. Integrated CoreML for seamless image processing and SerpAPI for Google Shopping integration to deliver relevant product information in real-time.",
-      imageUrl:
-        "https://dummyimage.com/600x400/4a9eff/ffffff&text=ClothesFinder",
+        "A mobile app that finds clothing for sale by taking a photo. Features an intuitive UI with UIKit, image processing via CoreML, and shopping results from Google Shopping via SerpAPI.",
+      imageUrl: clothesFinderImage,
       technologies: ["UIKit", "Swift", "Firebase", "SerpAPI", "CoreML"],
       url: "#",
     },
     {
       name: "Krak",
       description:
-        "Developed an iOS app for delivering short-form podcast content using audio RSS feeds, providing personalized user experiences through Firebase for secure session management and data storage. Designed in Figma and built with UIKit for a responsive and smooth user interface across devices. Handled RSS/XML parsing and used URLSession for network calls, ensuring asynchronous data retrieval and offline caching. Integrated AVFoundation for seamless audio playback, including background audio and media controls. Implemented CI/CD pipelines and testing via TestFlight for efficient app deployment.",
-      imageUrl: "https://dummyimage.com/600x400/9d4edd/ffffff&text=Krak",
+        "An iOS/web app for short-form podcast content with personalized experiences. Built with UIKit, Firebase for data storage, and AVFoundation for audio playback. Features RSS feed parsing and offline caching.",
+      imageUrl: krakImage,
       technologies: ["UIKit", "Firebase Firestore", "Python"],
       url: "https://trykrak.framer.ai",
     },
+    {
+      name: "NutrAI (Coming Soon)",
+      description:
+        "NutrAI is an iOS calorie tracker designed to simplify meal logging through natural language input. Instead of requiring users to break down recipes or input meals ingredient by ingredient, NutrAI lets users describe their meals in plain text. ",
+      imageUrl: nutrAiImage,
+      technologies: ["SwiftUI", "Firebase Firestore", "SwiftData", "OpenAI", "ExpressJS"],
+    }
   ],
 }: ProjectsGridProps) => {
   return (
