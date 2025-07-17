@@ -1,5 +1,5 @@
 import React from "react";
-import { Code, Database, Globe, Layout, Server } from "lucide-react";
+import { Code, Database, Globe, Layout, Server, Settings } from "lucide-react";
 import TechBadge from "./TechBadge";
 
 interface TechStackProps {
@@ -27,13 +27,26 @@ const TechStack = ({
         "SwiftUI",
         "SpringBoot",
         "Spring Batch",
+        "Core Data",
         "IBM DataStage",
         "Oracle",
         "Firebase",
-        "OCF/PCF",
-        "Azure",
+        "Pivotal Cloud Foundry",
+        "Azure DevOps",
+        "AWS",
+        "GitHub",
       ],
       description: "Frameworks and platforms I work with",
+    },
+    {
+      name: "Other Tools",
+      icon: <Settings className="h-5 w-5" />,
+      keywords: [
+        "Jira",
+        "Figma",
+        "Jupyter Notebooks"
+      ],
+      description: "Additional tools and platforms I'm proficient with",
     },
   ],
 }: TechStackProps) => {
