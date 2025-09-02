@@ -37,7 +37,7 @@ const ProjectsGrid = ({
       description:
         "NutrAI is an iOS calorie tracker designed to simplify meal logging through natural language input. Instead of requiring users to break down recipes or input meals ingredient by ingredient, NutrAI lets users describe their meals in plain text. ",
       imageUrl: nutrAiImage,
-      technologies: ["SwiftUI", "Firebase Firestore", "SwiftData", "OpenAI", "ExpressJS"],
+      technologies: ["SwiftUI", "Firebase Firestore", "SwiftData", "OpenAI", "ExpressJS", "Firebase Authentication", "AWS Secret Manager"],
     }
   ],
 }: ProjectsGridProps) => {
