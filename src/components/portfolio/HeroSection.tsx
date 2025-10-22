@@ -8,6 +8,7 @@ interface HeroSectionProps {
   title?: string;
   subtitle?: string;
   onExploreClick?: () => void;
+  onContactClick?: () => void;
 }
 
 const HeroSection = ({
@@ -15,6 +16,7 @@ const HeroSection = ({
   title = "Software Engineer",
   subtitle = "Pursuing my curiosity with technology",
   onExploreClick = () => {},
+  onContactClick = () => {},
 }: HeroSectionProps) => {
   return (
     <section className="min-h-screen w-full bg-[#0f172a] flex items-center justify-center">
@@ -39,15 +41,26 @@ const HeroSection = ({
           </p>
         </div>
 
-        <Button
-          onClick={onExploreClick}
-          variant="outline"
-          size="lg"
-          className="mt-12 border-purple-600 text-white hover:bg-purple-600/20"
-        >
-          Explore My Work
-          <ArrowDown className="ml-2 h-4 w-4" />
-        </Button>
+        <div className="flex justify-center items-center mt-12">
+          <Button
+            onClick={onExploreClick}
+            variant="outline"
+            size="lg"
+            className="mr-4 border-purple-600 text-white hover:bg-purple-600/20"
+          >
+            Explore My Work
+            <ArrowDown className="ml-2 h-4 w-4" />
+          </Button>
+          <Button
+            onClick={onContactClick}
+            variant="outline"
+            size="lg"
+            className="border-purple-600 text-white hover:bg-purple-600/20"
+          >
+            Contact Me
+            <ArrowDown className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </section>
   );

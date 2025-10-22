@@ -12,6 +12,7 @@ interface ContactSectionProps {
     twitter?: string;
   };
   onSubmit?: (data: { name: string; email: string; message: string }) => void;
+  sendEnabled?: boolean;
 }
 
 const ContactSection = ({
@@ -22,6 +23,7 @@ const ContactSection = ({
     twitter: "https://twitter.com",
   },
   onSubmit = () => {},
+  sendEnabled = false,
 }: ContactSectionProps) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -56,40 +58,54 @@ const ContactSection = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Contact Form or Notice */}
           <div className="space-y-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-4">
-                <Input
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-background border-border"
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-background border-border"
-                />
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="min-h-[150px] bg-background border-border"
-                />
+            {sendEnabled ? (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-4">
+                  <Input
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="bg-background border-border"
+                  />
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-background border-border"
+                  />
+                  <Textarea
+                    name="message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="min-h-[150px] bg-background border-border"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                >
+                  Send Message
+                </Button>
+              </form>
+            ) : (
+              <div className="space-y-4 p-6 rounded-lg border border-border bg-accent/5">
+                <h3 className="text-lg font-semibold">Contact form coming soon</h3>
+                <p className="text-foreground/80">
+                  The contact form is temporarily unavailable. Please reach out via email or social links.
+                </p>
+                <a href={`mailto:${email}`} className="inline-flex">
+                  <Button className="bg-purple-600 hover:bg-purple-700 text-white">
+                    <Mail className="mr-2 h-4 w-4" /> Email me
+                  </Button>
+                </a>
               </div>
-              <Button
-                type="submit"
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-              >
-                Send Message
-              </Button>
-            </form>
+            )}
           </div>
 
           {/* Contact Information */}

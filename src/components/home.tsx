@@ -53,6 +53,7 @@ const Home = () => {
             title="Software Developer & Engineer"
             subtitle="Pursuing my curiosity with technology"
             onExploreClick={() => handleSectionClick("experience")}
+            onContactClick={() => handleSectionClick("contact")}
           />
         </div>
 
